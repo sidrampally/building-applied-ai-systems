@@ -1,0 +1,26 @@
+{
+  "texts": [
+    "Aspirin (acetylsalicylic acid) is a medication used to reduce pain, fever, or inflammation. It is a nonsteroidal anti-inflammatory drug (NSAID) that works by blocking the production of certain natural substances that cause inflammation in the body.",
+    "The typical adult dosage for aspirin is 325-650 mg every 4 hours as needed for pain or fever, not to exceed 4000 mg per day. For cardiovascular protection, a low dose of 81 mg daily is commonly prescribed. Always follow your doctor's instructions for dosing.",
+    "Aspirin is contraindicated in patients with known hypersensitivity to salicylates, active peptic ulcer disease, or bleeding disorders. It should be used with caution in patients with asthma, kidney disease, liver disease, or those taking anticoagulant medications.",
+    "Common side effects of aspirin include stomach upset, heartburn, nausea, and increased risk of bleeding. Serious but rare side effects can include gastrointestinal bleeding, allergic reactions, and Reye's syndrome in children and teenagers.",
+    "Aspirin has multiple therapeutic uses including pain relief, fever reduction, anti-inflammatory effects, and cardiovascular protection. It is commonly used for headaches, muscle aches, arthritis, and as a blood thinner to prevent heart attacks and strokes.",
+    "The mechanism of action of aspirin involves irreversible inhibition of cyclooxygenase (COX) enzymes, specifically COX-1 and COX-2. This blocks the synthesis of prostaglandins and thromboxanes, which are mediators of pain, inflammation, and platelet aggregation.",
+    "Drug interactions with aspirin include increased bleeding risk when combined with warfarin or other anticoagulants, reduced effectiveness of ACE inhibitors, and increased toxicity when combined with methotrexate. Always inform your healthcare provider about all medications you are taking.",
+    "Aspirin should be stored at room temperature, away from moisture and heat. Keep the container tightly closed and out of reach of children. Do not use aspirin that smells strongly of vinegar, as this indicates the medication has broken down and may be less effective.",
+    "Overdose symptoms of aspirin include ringing in the ears (tinnitus), confusion, rapid breathing, nausea, vomiting, and in severe cases, seizures or coma. Aspirin overdose is a medical emergency requiring immediate treatment.",
+    "Special populations require careful consideration when using aspirin. Pregnant women should avoid aspirin, especially in the third trimester. Elderly patients are at higher risk for side effects and may require dose adjustments. Children under 16 should not take aspirin due to risk of Reye's syndrome."
+  ],
+  "metadata": [
+    {"source": "aspirin_overview.pdf", "section": "general_info", "drug": "aspirin"},
+    {"source": "aspirin_dosing_guide.pdf", "section": "dosage", "drug": "aspirin"},
+    {"source": "aspirin_contraindications.pdf", "section": "safety", "drug": "aspirin"},
+    {"source": "aspirin_side_effects.pdf", "section": "adverse_reactions", "drug": "aspirin"},
+    {"source": "aspirin_indications.pdf", "section": "uses", "drug": "aspirin"},
+    {"source": "aspirin_pharmacology.pdf", "section": "mechanism", "drug": "aspirin"},
+    {"source": "aspirin_interactions.pdf", "section": "drug_interactions", "drug": "aspirin"},
+    {"source": "aspirin_storage.pdf", "section": "storage", "drug": "aspirin"},
+    {"source": "aspirin_overdose.pdf", "section": "toxicology", "drug": "aspirin"},
+    {"source": "aspirin_special_populations.pdf", "section": "special_considerations", "drug": "aspirin"}
+  ]
+}

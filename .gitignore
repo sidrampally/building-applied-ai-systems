@@ -309,3 +309,6 @@ wandb/
 # Local development
 .local/
 local/
+
+# Draw.io files
+*.drawio

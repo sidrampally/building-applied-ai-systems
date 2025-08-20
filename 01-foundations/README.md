@@ -1,72 +1,22 @@
 # Part 01: Foundations - From Model to System
 
-Build a minimal RAG microservice with FastAPI and React UI. This is your first step into building production-ready AI systems.
+> **Part of the "Building Applied AI Systems" Blog Series**  
+> Learn to build production-ready AI systems step by step, from basic RAG to enterprise deployment.
 
-## 🎯 What You'll Build
-
-A complete RAG (Retrieval-Augmented Generation) system with:
-- **FastAPI Backend**: `/embed`, `/search`, `/answer` endpoints
-- **React Frontend**: Search interface with real-time results
-- **Vector Search**: FAISS-based similarity search
-- **Production Ready**: Docker Compose + CloudFormation deployment
-
-## 🏗️ Architecture
-
-```
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   React UI      │    │   FastAPI       │    │   FAISS         │
-│   (Port 3000)   │◄──►│   (Port 8000)   │◄──►│   Vector Store  │
-│                 │    │                 │    │                 │
-│ • Search Box    │    │ • /embed        │    │ • Index         │
-│ • Results       │    │ • /search       │    │ • Search        │
-│ • Sources       │    │ • /answer       │    │ • Persistence   │
-└─────────────────┘    └─────────────────┘    └─────────────────┘
-```
-
-## 📁 Project Structure
-
-```
-parts/01-foundations/
-├── app/
-│   ├── main.py              # FastAPI application
-│   ├── models.py            # Pydantic models
-│   └── dependencies.py      # Dependency injection
-├── src/
-│   └── rag_basic/
-│       ├── __init__.py
-│       ├── chunker.py       # Text chunking
-│       ├── embedder.py      # Sentence transformers
-│       └── faiss_store.py   # Vector store
-├── web/
-│   ├── package.json
-│   ├── src/
-│   │   ├── App.tsx
-│   │   ├── components/
-│   │   └── hooks/
-│   └── public/
-├── cfn/
-│   └── stack.yaml           # CloudFormation template
-├── tests/
-│   ├── test_api.py
-│   └── test_rag.py
-├── docker-compose.yml
-├── Dockerfile
-└── README.md
-```
+Build a minimal RAG (Retrieval-Augmented Generation) system with FastAPI backend and React frontend. This foundation will prepare you for more advanced AI system patterns in the upcoming blog posts.
 
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Python 3.11+
-- Node.js 18+
 - Docker & Docker Compose
-- AWS CLI (for cloud deployment)
+- OpenAI API key
 
-### Local Development
+### Run the System
 
-1. **Clone and navigate**
+1. **Set up environment**
    ```bash
-   cd 01-foundations
+   cp env.example .env
+   # Edit .env with your OpenAI API key
    ```
 
 2. **Start services**
@@ -76,30 +26,25 @@ parts/01-foundations/
 
 3. **Access the application**
    - Frontend: http://localhost:3000
-   - API: http://localhost:8000
    - API Docs: http://localhost:8000/docs
 
-### Cloud Deployment
+4. **Add sample data**
+   - Go to http://localhost:8000/docs
+   - Use the `/embed` endpoint to add documents
+   - Try the sample drug data in `sample_drug_data.json`
 
-1. **Deploy to AWS**
-   ```bash
-   aws cloudformation deploy \
-     --template-file cfn/stack.yaml \
-     --stack-name applied-ai-part01 \
-     --capabilities CAPABILITY_IAM \
-     --parameter-overrides \
-       Environment=production \
-       DomainName=your-domain.com
-   ```
+## 🎯 What You Get
 
-2. **Access deployed application**
-   - Frontend: https://your-domain.com
-   - API: https://api.your-domain.com
+- **Document embedding** into FAISS vector database
+- **Semantic search** with similarity scoring  
+- **RAG-powered answers** using GPT-4
+- **Source attribution** with real filenames
+- **Interactive UI** for testing and demos
 
 ## 📊 API Endpoints
 
 ### POST /embed
-Embed text chunks into vector store
+Add documents to the knowledge base
 ```json
 {
   "texts": ["chunk 1", "chunk 2", "chunk 3"],
@@ -108,7 +53,7 @@ Embed text chunks into vector store
 ```
 
 ### POST /search
-Search for similar documents
+Find relevant document chunks
 ```json
 {
   "query": "What is machine learning?",
@@ -145,28 +90,6 @@ WEB_HOST=localhost
 WEB_PORT=3000
 ```
 
-### Configuration File
-```yaml
-# config.yaml
-app:
-  name: "rag-foundations"
-  version: "1.0.0"
-
-llm:
-  provider: "openai"
-  model: "gpt-4"
-  max_tokens: 1000
-
-vector_store:
-  type: "faiss"
-  dimension: 1536
-  index_path: "./data/faiss_index"
-
-chunking:
-  chunk_size: 1000
-  chunk_overlap: 200
-```
-
 ## 🧪 Testing
 
 ### Run Tests
@@ -174,57 +97,33 @@ chunking:
 # Unit tests
 pytest tests/
 
-# Integration tests
-pytest tests/ -m integration
-
 # API tests
 pytest tests/test_api.py -v
 ```
 
-### Test Coverage
-```bash
-pytest --cov=app --cov=src tests/
-```
+## 📈 What to Measure
 
-## 📈 Metrics & Monitoring
-
-### What to Measure
-
-#### Performance
+### Performance
 - **Latency**: p50/p95 response times for each endpoint
 - **Throughput**: requests per second
 - **Resource Usage**: CPU, memory, disk I/O
 
-#### Quality
+### Quality
 - **Recall@k**: How many relevant documents are retrieved
 - **Answer Relevance**: Human evaluation of answer quality
 - **Source Attribution**: Accuracy of source citations
 
-#### Cost
+### Cost
 - **Tokens per Query**: Input + output tokens
 - **Cost per Query**: $/request breakdown
 - **Monthly Forecast**: Projected costs at scale
 
-### Monitoring Setup
-```python
-# Example metrics collection
-from prometheus_client import Counter, Histogram
-
-request_counter = Counter('rag_requests_total', 'Total RAG requests')
-request_duration = Histogram('rag_request_duration_seconds', 'Request duration')
-```
-
 ## 🔒 Security Considerations
 
-### Data Protection
 - No PHI/PII in training data
 - Input validation and sanitization
 - Rate limiting on API endpoints
-
-### Access Control
 - API key authentication
-- CORS configuration
-- Request logging and monitoring
 
 ## 🚨 Troubleshooting
 
@@ -232,41 +131,24 @@ request_duration = Histogram('rag_request_duration_seconds', 'Request duration')
 
 1. **FAISS Index Not Found**
    ```bash
-   # Create index directory
    mkdir -p data/
    ```
 
 2. **CORS Errors**
-   ```python
-   # Update CORS settings in main.py
-   app.add_middleware(
-       CORSMiddleware,
-       allow_origins=["http://localhost:3000"],
-       allow_credentials=True,
-       allow_methods=["*"],
-       allow_headers=["*"],
-   )
-   ```
+   - Check that frontend is running on http://localhost:3000
+   - Verify CORS settings in main.py
 
 3. **Memory Issues**
    ```bash
-   # Increase Docker memory limit
    docker compose up --memory=4g
    ```
 
-## 📚 Next Steps
+## 📚 Next in the Series
 
-After completing Part 01, you'll be ready for:
-- **Part 02**: Data ingest and cleaning pipeline
+- **Part 02**: Data ingest and cleaning pipeline  
 - **Part 03**: Multiple vector store implementations
 - **Part 04**: Orchestration framework comparison
-
-## 🤝 Contributing
-
-Found a bug or have an improvement? 
-1. Fork the repository
-2. Create a feature branch
-3. Submit a pull request
+- **Part 05**: Amazon Bedrock AgentCore for Enterprise AI Agents
 
 ## 📄 License
 
