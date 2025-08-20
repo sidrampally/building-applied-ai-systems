@@ -44,23 +44,22 @@ Each part delivers a complete, deployable AI system with:
 
 ```
 building-applied-ai-systems/
-├── parts/                          # Individual series parts
-│   ├── 01-foundations/            # RAG microservice + React UI
-│   ├── 02-data-ingest/            # Document pipeline + PII scrubbing
-│   ├── 03-vector-stores/          # FAISS, Weaviate, pgvector
-│   ├── 04-orchestration/          # LangChain, LangGraph, etc.
-│   ├── 05-agent-patterns/         # Production agent patterns
-│   ├── 06-enterprise-rag/         # Advanced RAG with caching
-│   ├── 07-hcls-drug-discovery/    # Drug discovery pipeline
-│   ├── 08-clinical-trials/        # DCT simulation
-│   ├── 09-evaluation-safety/      # Safety & evaluation
-│   ├── 10-multimodal/             # Vision + speech
-│   ├── 11-mlops/                  # CI/CD, model registry
-│   ├── 12-observability/          # Traces, metrics, cost
-│   ├── 13-security/               # Secrets, KMS, retention
-│   ├── 14-productization/         # UX for different users
-│   ├── 15-multi-cloud/            # Provider-agnostic routing
-│   └── 16-starter-kit/            # Complete starter kit
+├── 01-foundations/                # RAG microservice + React UI
+├── 02-data-ingest/                # Document pipeline + PII scrubbing
+├── 03-vector-stores/              # FAISS, Weaviate, pgvector
+├── 04-orchestration/              # LangChain, LangGraph, etc.
+├── 05-agent-patterns/             # Production agent patterns
+├── 06-enterprise-rag/             # Advanced RAG with caching
+├── 07-hcls-drug-discovery/        # Drug discovery pipeline
+├── 08-clinical-trials/            # DCT simulation
+├── 09-evaluation-safety/          # Safety & evaluation
+├── 10-multimodal/                 # Vision + speech
+├── 11-mlops/                      # CI/CD, model registry
+├── 12-observability/              # Traces, metrics, cost
+├── 13-security/                   # Secrets, KMS, retention
+├── 14-productization/             # UX for different users
+├── 15-multi-cloud/                # Provider-agnostic routing
+├── 16-starter-kit/                # Complete starter kit
 ├── shared/                        # Common code across parts
 │   ├── src/                       # Shared libraries
 │   ├── tests/                     # Common test utilities
@@ -91,7 +90,7 @@ building-applied-ai-systems/
 
 2. **Start with Part 01**
    ```bash
-   cd parts/01-foundations
+   cd 01-foundations
    docker compose up
    ```
 
@@ -142,24 +141,24 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 ## 🗺️ Roadmap
 
-- [ ] Part 01: Foundations (Week 1)
-- [ ] Part 02: Data Pipeline (Week 2)
-- [ ] Part 03: Vector Stores (Week 3)
-- [ ] Part 04: Orchestration (Week 4)
-- [ ] Part 05: Agent Patterns (Week 5)
-- [ ] Part 06: Enterprise RAG (Week 6)
-- [ ] Part 07: Drug Discovery (Week 7)
-- [ ] Part 08: Clinical Trials (Week 8)
-- [ ] Part 09: Safety & Evaluation (Week 9)
-- [ ] Part 10: Multi-Modal (Week 10)
-- [ ] Part 11: MLOps (Week 11)
-- [ ] Part 12: Observability (Week 12)
-- [ ] Part 13: Security (Week 13)
-- [ ] Part 14: Productization (Week 14)
-- [ ] Part 15: Multi-Cloud (Week 15)
-- [ ] Part 16: Starter Kit (Week 16)
-- [ ] Advanced Tracks (Ongoing)
+- [ ] [Part 01: Foundations](01-foundations/) (Week 1)
+- [ ] [Part 02: Data Pipeline](02-data-ingest/) (Week 2)
+- [ ] [Part 03: Vector Stores](03-vector-stores/) (Week 3)
+- [ ] [Part 04: Orchestration](04-orchestration/) (Week 4)
+- [ ] [Part 05: Agent Patterns](05-agent-patterns/) (Week 5)
+- [ ] [Part 06: Enterprise RAG](06-enterprise-rag/) (Week 6)
+- [ ] [Part 07: Drug Discovery](07-hcls-drug-discovery/) (Week 7)
+- [ ] [Part 08: Clinical Trials](08-clinical-trials/) (Week 8)
+- [ ] [Part 09: Safety & Evaluation](09-evaluation-safety/) (Week 9)
+- [ ] [Part 10: Multi-Modal](10-multimodal/) (Week 10)
+- [ ] [Part 11: MLOps](11-mlops/) (Week 11)
+- [ ] [Part 12: Observability](12-observability/) (Week 12)
+- [ ] [Part 13: Security](13-security/) (Week 13)
+- [ ] [Part 14: Productization](14-productization/) (Week 14)
+- [ ] [Part 15: Multi-Cloud](15-multi-cloud/) (Week 15)
+- [ ] [Part 16: Starter Kit](16-starter-kit/) (Week 16)
+- [ ] [Advanced Tracks](advanced/) (Ongoing)
 
 ---
 
-**Ready to build production AI systems? Start with [Part 01: Foundations](parts/01-foundations/README.md)**
+**Ready to build production AI systems? Start with [Part 01: Foundations](01-foundations/README.md)**
