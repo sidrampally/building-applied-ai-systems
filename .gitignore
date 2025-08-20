@@ -312,3 +312,6 @@ local/
 
 # Draw.io files
 *.drawio
+
+# Documentation files (for blog writing)
+COMPREHENSIVE_DOCUMENTATION.md
